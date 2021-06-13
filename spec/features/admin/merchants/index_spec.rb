@@ -57,7 +57,7 @@ RSpec.describe 'Admin Merchants Index Page' do
 
   it "I see the name of each merchant in their respective category of either 'Enabled' or 'Disabled'."  do
     expect(current_path).to eq(admin_merchants_path)
-    # enabled
+
     within "#enabled-merchant-#{@merchant1.id}" do
       expect(page).to have_content(@merchant1.name)
     end
@@ -70,7 +70,6 @@ RSpec.describe 'Admin Merchants Index Page' do
       expect(page).to have_content(@merchant3.name)
     end
 
-    # disabled
     within "#disabled-merchant-#{@merchant4.id}" do
       expect(page).to have_content(@merchant4.name)
     end
@@ -85,7 +84,6 @@ RSpec.describe 'Admin Merchants Index Page' do
   end
 
   it "I can click a button to enable or disable a merchants status" do
-    # Enabled
     within("#enabled-merchant-#{@merchant1.id}") do
       expect(page).to have_content(@merchant1.name)
       expect(@merchant1.status).to eq('enable')
@@ -97,7 +95,6 @@ RSpec.describe 'Admin Merchants Index Page' do
       expect(@new_merchant1.status).to eq('disable')
     end
 
-    # Disabled
     within("#disabled-merchant-#{@merchant4.id}") do
       expect(page).to have_content(@merchant4.name)
       expect(@merchant4.status).to eq('disable')

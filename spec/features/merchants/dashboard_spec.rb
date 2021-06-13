@@ -93,25 +93,11 @@ RSpec.describe 'merchant dashboard' do
     expect(page).to have_content("#{@customer5.first_name} #{@customer5.last_name}")
     expect(page).to have_no_content("#{@customer6.first_name} #{@customer6.last_name}")
 
-    # within("##{@customer1.id}") do
-      expect(page).to have_content(@customer1.top_successful_transactions(@merchant.id))
-    # end
-
-    # within("##{@customer2.id}") do
-      expect(page).to have_content(@customer2.top_successful_transactions(@merchant.id))
-    # end
-
-    # within("##{@customer3.id}") do
-      expect(page).to have_content(@customer3.top_successful_transactions(@merchant.id))
-    # end
-
-    # within("##{@customer4.id}") do
-      expect(page).to have_content(@customer4.top_successful_transactions(@merchant.id))
-    # end
-
-    # within("##{@customer5.id}") do
-      expect(page).to have_content(@customer5.top_successful_transactions(@merchant.id))
-    # end
+    expect(page).to have_content(@customer1.top_successful_transactions)
+    expect(page).to have_content(@customer2.top_successful_transactions)
+    expect(page).to have_content(@customer3.top_successful_transactions)
+    expect(page).to have_content(@customer4.top_successful_transactions)
+    expect(page).to have_content(@customer5.top_successful_transactions)
   end
 
   it 'has a section to display all items that have been packaged but not yet shipped' do
