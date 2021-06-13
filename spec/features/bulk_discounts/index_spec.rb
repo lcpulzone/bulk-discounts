@@ -141,16 +141,24 @@ RSpec.describe 'bulk discounts index page' do
       visit merchant_bulk_discounts_path(@merchant.id)
 
       within("#discounts-#{@discount1.id}") do
-        expect(page).to have_link("Delete Discount", href: "/merchants/#{@merchant.id}/bulk_discounts/#{@discount1.id}")
-        click_link("Delete Discount")
+        expect(page).to have_link("Delete", href: "/merchants/#{@merchant.id}/bulk_discounts/#{@discount1.id}")
+        click_link("Delete")
       end
         expect(page).to_not have_link("#{@discount1.percentage}")
 
       within("#discounts-#{@discount3.id}") do
-        expect(page).to have_link("Delete Discount", href: "/merchants/#{@merchant.id}/bulk_discounts/#{@discount3.id}")
-        click_link("Delete Discount")
+        expect(page).to have_link("Delete", href: "/merchants/#{@merchant.id}/bulk_discounts/#{@discount3.id}")
+        click_link("Delete")
       end
         expect(page).to_not have_link("#{@discount3.percentage}")
+    end
+  end
+
+  describe 'edit discount' do
+    it 'has a link to edit the discount' do
+      visit merchant_bulk_discounts_path(@merchant.id)
+
+      expect(page).to have_link("Edit", href: "/merchants/#{@merchant.id}/bulk_discounts/#{@discount2.id}/edit")
     end
   end
 end
