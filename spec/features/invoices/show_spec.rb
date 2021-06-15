@@ -69,7 +69,6 @@ RSpec.describe 'invoice show page' do
     @transaction15 = @invoice6.transactions.create!(result: 0, credit_card_number: 4540842003561938)
     @transaction16 = @invoice6.transactions.create!(result: 0, credit_card_number: 4540842003561938)
     @transaction17 = @invoice6.transactions.create!(result: 0, credit_card_number: 4540842003561938)
-
   end
 
   it 'displays the invoice id, status, created at, and customer name' do
