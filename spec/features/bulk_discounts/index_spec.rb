@@ -110,30 +110,34 @@ RSpec.describe 'bulk discounts index page' do
         :launchYear=>"null",
         :type=>"Public"
       },
-      {:date=>"2021-09-06",
-    :localName=>"Labor Day",
-    :name=>"Labour Day",
-    :countryCode=>"US",
-    :fixed=>false,
-    :global=>true,
-    :counties=>nil,
-    :launchYear=>nil,
-    :type=>"Public"
-    },
-    {:date=>"2021-11-11",
-    :localName=>"Veterans Day",
-    :name=>"Veterans Day",
-    :countryCode=>"US",
-    :fixed=>false,
-    :global=>true,
-    :counties=>nil,
-    :launchYear=>nil,
-    :type=>"Public"
+      {
+        :date=>"2021-09-06",
+        :localName=>"Labor Day",
+        :name=>"Labour Day",
+        :countryCode=>"US",
+        :fixed=>false,
+        :global=>true,
+        :counties=>nil,
+        :launchYear=>nil,
+        :type=>"Public"
+      },
+      {
+        :date=>"2021-11-11",
+        :localName=>"Veterans Day",
+        :name=>"Veterans Day",
+        :countryCode=>"US",
+        :fixed=>false,
+        :global=>true,
+        :counties=>nil,
+        :launchYear=>nil,
+        :type=>"Public"
     }]
 
       allow(Faraday).to receive(:get).and_return(Faraday::Response.new)
       allow(JSON).to receive(:parse).and_return(mock_response)
+
       visit merchant_bulk_discounts_path(@merchant.id)
+
       expect(page).to have_content(mock_response[0][:name])
       expect(page).to have_content(mock_response[1][:name])
       expect(page).to have_content(mock_response[2][:name])
