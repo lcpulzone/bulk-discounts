@@ -96,6 +96,12 @@ RSpec.describe Invoice, type: :model do
         expect(@invoice9.total_revenue).to eq(50000)
       end
     end
+
+    # describe '.class methods' do
+    #   it 'can give an invoice creation date' do
+    #     expect(Invoice.invoice_creation(@item1).present?).to eq(true)
+    #   end
+    # end
   end
 
   describe 'bulk discounts' do
