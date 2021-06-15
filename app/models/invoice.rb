@@ -45,4 +45,11 @@ class Invoice < ApplicationRecord
     .pluck(:created_at)
     .strftime("%A, %B %d, %Y")
   end
+
+  def invoice_revenue_with_discounts
+    price = invoice_items.map do |item|
+      item.total_item_sum
+    end
+    price.sum
+  end
 end
