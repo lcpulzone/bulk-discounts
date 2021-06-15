@@ -104,10 +104,13 @@ RSpec.describe InvoiceItem, type: :model do
 
     it 'can give the invoice_item total' do
       expect(@invoice_item6.invoice_item_total).to eq(107.10)
+      expect(@invoice_item6.invoice_item_total).to_not eq(107)
+      expect(@invoice_item6.invoice_item_total).to_not eq(15.30)
     end
 
     it 'can find the discount total price' do
       expect(@invoice_item3.discount_total_price).to eq(54.32)
+      expect(@invoice_item3.discount_total_price).to_not eq(77.60)
     end
 
     it 'can determine the total price for an item' do
