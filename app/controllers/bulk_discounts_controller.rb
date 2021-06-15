@@ -2,10 +2,7 @@ class BulkDiscountsController < ApplicationController
   def index
     @merchant = Merchant.find(params[:merchant_id])
     @discounts = @merchant.bulk_discounts
-
-    response = Faraday.get 'https://date.nager.at/api/v2/NextPublicHolidays/us'
-    parsed = JSON.parse(response.body, symbolize_names: true)
-    @holidays = parsed[0..2]
+    @holidays = DateService.next_three_holidays
   end
 
   def show

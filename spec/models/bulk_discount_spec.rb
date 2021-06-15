@@ -62,21 +62,16 @@ RSpec.describe BulkDiscount, type: :model do
     @transaction1 = @invoice1.transactions.create!(result: 1, credit_card_number: 4654405418249632)
     @transaction2 = @invoice1.transactions.create!(result: 1, credit_card_number: 4580251236515201)
     @transaction3 = @invoice1.transactions.create!(result: 1, credit_card_number: 4580251236515201)
-
     @transaction4 = @invoice2.transactions.create!(result: 1, credit_card_number: 4923661117104166)
     @transaction5 = @invoice2.transactions.create!(result: 1, credit_card_number: 4515551623735617)
     @transaction6 = @invoice2.transactions.create!(result: 1, credit_card_number: 4515551623735617)
     @transaction7 = @invoice2.transactions.create!(result: 1, credit_card_number: 4515551623735607)
-
     @transaction8 = @invoice3.transactions.create!(result: 1, credit_card_number: 4203696133194408)
-
     @transaction9 = @invoice4.transactions.create!(result: 1, credit_card_number: 4203696133194408)
     @transaction10 = @invoice4.transactions.create!(result: 1, credit_card_number: 4540842003561938)
-
     @transaction11 = @invoice5.transactions.create!(result: 1, credit_card_number: 4203696133194408)
     @transaction12 = @invoice5.transactions.create!(result: 1, credit_card_number: 4540842003561938)
     @transaction13 = @invoice5.transactions.create!(result: 1, credit_card_number: 4203696133194408)
-
     @transaction14 = @invoice6.transactions.create!(result: 1, credit_card_number: 4540842003561938)
     @transaction15 = @invoice6.transactions.create!(result: 0, credit_card_number: 4540842003561938)
     @transaction16 = @invoice6.transactions.create!(result: 0, credit_card_number: 4540842003561938)

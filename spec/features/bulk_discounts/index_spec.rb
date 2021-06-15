@@ -1,5 +1,4 @@
 require 'rails_helper'
-# require 'webmock/rspec'
 
 RSpec.describe 'bulk discounts index page' do
   before(:each) do
@@ -51,27 +50,20 @@ RSpec.describe 'bulk discounts index page' do
     @transaction1 = @invoice1.transactions.create!(result: 1, credit_card_number: 4654405418249632)
     @transaction2 = @invoice1.transactions.create!(result: 1, credit_card_number: 4580251236515201)
     @transaction3 = @invoice1.transactions.create!(result: 1, credit_card_number: 4580251236515201)
-
     @transaction4 = @invoice2.transactions.create!(result: 1, credit_card_number: 4923661117104166)
     @transaction5 = @invoice2.transactions.create!(result: 1, credit_card_number: 4515551623735617)
     @transaction6 = @invoice2.transactions.create!(result: 1, credit_card_number: 4515551623735617)
     @transaction7 = @invoice2.transactions.create!(result: 1, credit_card_number: 4515551623735607)
-
     @transaction8 = @invoice3.transactions.create!(result: 1, credit_card_number: 4203696133194408)
-
     @transaction9 = @invoice4.transactions.create!(result: 1, credit_card_number: 4203696133194408)
     @transaction10 = @invoice4.transactions.create!(result: 1, credit_card_number: 4540842003561938)
-
     @transaction11 = @invoice5.transactions.create!(result: 1, credit_card_number: 4203696133194408)
     @transaction12 = @invoice5.transactions.create!(result: 1, credit_card_number: 4540842003561938)
     @transaction13 = @invoice5.transactions.create!(result: 1, credit_card_number: 4203696133194408)
-
     @transaction14 = @invoice6.transactions.create!(result: 1, credit_card_number: 4540842003561938)
     @transaction15 = @invoice6.transactions.create!(result: 0, credit_card_number: 4540842003561938)
     @transaction16 = @invoice6.transactions.create!(result: 0, credit_card_number: 4540842003561938)
     @transaction17 = @invoice6.transactions.create!(result: 0, credit_card_number: 4540842003561938)
-    # visit "/merchants/#{@merchant___.id}/bulk_discounts"
-    # visit merchant_bulk_discounts_path(@merchant___.id)
   end
 
   describe 'by merchant' do
@@ -105,13 +97,9 @@ RSpec.describe 'bulk discounts index page' do
       expect(page).to have_content("Upcoming Holidays")
     end
 
-    xit 'can request name and date of upcoming holidays from Nager.Date API' do
-      visit merchant_bulk_discounts_path(@merchant.id)
+    it 'can request name and date of upcoming holidays from Nager.Date API' do
 
-      response = Faraday.get 'https://date.nager.at/api/v2/NextPublicHolidays/us'
-      parsed = JSON.parse(response.body, symbolize_names: true)
-      @holidays = parsed
-      mock_response = {
+      mock_response = [{
         :date=>"2021-07-05",
         :localName=>"Independence Day",
         :name=>"Independence Day",
@@ -121,10 +109,38 @@ RSpec.describe 'bulk discounts index page' do
         :counties=>"null",
         :launchYear=>"null",
         :type=>"Public"
-      }
+      },
+      {
+        :date=>"2021-09-06",
+        :localName=>"Labor Day",
+        :name=>"Labour Day",
+        :countryCode=>"US",
+        :fixed=>false,
+        :global=>true,
+        :counties=>nil,
+        :launchYear=>nil,
+        :type=>"Public"
+      },
+      {
+        :date=>"2021-11-11",
+        :localName=>"Veterans Day",
+        :name=>"Veterans Day",
+        :countryCode=>"US",
+        :fixed=>false,
+        :global=>true,
+        :counties=>nil,
+        :launchYear=>nil,
+        :type=>"Public"
+    }]
 
-      allow_any_instance_of(Faraday::Response).to receive(:body).and_return(mock_response)
-      expect(@holidays[:name]).to eq("Independence Day")
+      allow(Faraday).to receive(:get).and_return(Faraday::Response.new)
+      allow(JSON).to receive(:parse).and_return(mock_response)
+
+      visit merchant_bulk_discounts_path(@merchant.id)
+
+      expect(page).to have_content(mock_response[0][:name])
+      expect(page).to have_content(mock_response[1][:name])
+      expect(page).to have_content(mock_response[2][:name])
     end
   end
 
