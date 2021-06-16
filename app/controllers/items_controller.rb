@@ -25,8 +25,6 @@ class ItemsController < ApplicationController
 
     if @item.save
       redirect_to "/merchants/#{@merchant.id}/items"
-    else
-      render :new
     end
   end
 
@@ -43,8 +41,6 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to "/merchants/#{@merchant.id}/items/#{@item.id}"
       flash[:notice] = "Item information has been successfully updated!"
-    else
-      redirect_to "/merchants/#{@merchant.id}/items/#{@item.id}/edit"
     end
   end
 

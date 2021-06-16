@@ -100,5 +100,4 @@ RSpec.describe GithubService, type: :model do
 
     expect(pull_requests).to eq(18)
   end
-
 end
