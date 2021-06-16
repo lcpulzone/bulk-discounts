@@ -1,9 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  def index
-    
-  end
-
   private
 
   def error_message(errors)

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get '/', to: 'application#index'
   #-------Merchant-------------------
   get '/merchants/:id/dashboard', to: 'merchants#dashboard'
   resources :merchants do
