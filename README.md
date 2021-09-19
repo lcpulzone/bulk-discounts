@@ -1,5 +1,5 @@
 <div align="center">
-  <a href=https://github.com/lcpulzone/bulk-discounts><img src="https://img.shields.io/github/contributors/lcpulzone/bulk-discounts.svg?style=for-the-badge" /></a>
+  <a href=https://github.com/lcpulzone/bulk-discounts/graphs/contributors><img src="https://img.shields.io/github/contributors/lcpulzone/bulk-discounts.svg?style=for-the-badge" /></a>
   <a href=https://github.com/lcpulzone/bulk-discounts/network/members><img src="https://img.shields.io/github/forks/lcpulzone/bulk-discounts.svg?style=for-the-badge" /></a>
   <a href=https://github.com/lcpulzone/bulk-discounts/stargazers><img src="https://img.shields.io/github/stars/lcpulzone/bulk-discounts.svg?style=for-the-badge" /></a>
   <a href=https://github.com/lcpulzone/bulk-discounts/issues><img src="https://img.shields.io/github/issues/lcpulzone/bulk-discounts.svg?style=for-the-badge" /></a>
@@ -81,14 +81,14 @@ To get a local copy up and running follow these simple example steps.
 [RSpec](https://rspec.info/)
 
 1. To run testing suite
-```rb
-bundle exec rspec
-```
+   ```rb
+   bundle exec rspec
+   ```
 
 
 ## Schema
 
-![database_schema](https://github.com/lcpulzone/bulk-discounts/blob/main/db_schema.33.52.png?raw=true)
+![Little Esty Shop](https://user-images.githubusercontent.com/74436194/120427830-e18e2300-c32f-11eb-907c-723750913e80.png)
 
 See the [open issues](https://github.com/lcpulzone/bulk-discounts/issues) for a list of proposed features (and known issues).
 
@@ -108,8 +108,8 @@ Contributions are what make the open source community such an amazingly rad plac
 
 Leigh Cepriano Pulzone - [Linkedin](https://www.linkedin.com/in/lcpulzone/) - [GitHub](https://github.com/lcpulzone) - [Email](lcpulzone@gmail.com)
 
-Project Link: [Bulk Discounts](https://github.com/lcpulzone/bulk-discounts)
-
+Project Link: [Bulk Discounts](https://github.com/lcpulzone/bulk-discounts)<br />
+Group Project Link: [Little Esty Shop](https://github.com/jrwhitmer/little-esty-shop)
 
 
 ## Acknowledgements
@@ -121,7 +121,7 @@ Project Link: [Bulk Discounts](https://github.com/lcpulzone/bulk-discounts)
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/lcpulzone/bulk-discounts.svg?style=for-the-badge
-[contributors-url]: https://github.com/lcpulzone/bulk-discounts
+[contributors-url]: https://github.com/lcpulzone/bulk-discounts/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/lcpulzone/bulk-discounts.svg?style=for-the-badge
 [forks-url]: https://github.com/lcpulzone/bulk-discounts/network/members
 [stars-shield]: https://img.shields.io/github/stars/lcpulzone/bulk-discounts.svg?style=for-the-badge
