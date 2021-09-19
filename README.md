@@ -51,7 +51,7 @@ _This solo project is an extension of a group project called [Little Esty Shop](
 
 This project added functionality for merchants to create bulk discounts for their items. A “bulk discount” is a discount based on the quantity of items the customer is buying, for example “20% off orders of 10 or more items”.
 
-##### Project Goals:
+**Project Goals:**
 * Write migrations to create tables and relationships between tables
 Implement CRUD functionality for a resource using forms (form_tag or form_with), buttons, and links
 * Use MVC to organize code effectively, limiting the amount of logic included in views and controllers
@@ -59,7 +59,7 @@ Implement CRUD functionality for a resource using forms (form_tag or form_with),
 * Write model tests that fully cover the data logic of the application
 * Write feature tests that fully cover the functionality of the application
 
-##### Bulk Discounts are subject to the following criteria:
+**Bulk Discounts are subject to the following criteria:**
 
 * Bulk discounts should have a percentage discount as well as a quantity threshold
 * Bulk discounts should belong to a Merchant
