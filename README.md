@@ -47,14 +47,33 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)<br />
 ![tested with rspec](https://github.com/lcpulzone/bulk-discounts/blob/main/tested-with-rspec.svg)
 
-This solo project is an extension of a group project called [Little Esty Shop](https://github.com/jrwhitmer/little-esty-shop).
+_This solo project is an extension of a group project called [Little Esty Shop](https://github.com/jrwhitmer/little-esty-shop)_
 
+This project added functionality for merchants to create bulk discounts for their items. A “bulk discount” is a discount based on the quantity of items the customer is buying, for example “20% off orders of 10 or more items”.
 
+##### Project Goals:
+* Write migrations to create tables and relationships between tables
+Implement CRUD functionality for a resource using forms (form_tag or form_with), buttons, and links
+* Use MVC to organize code effectively, limiting the amount of logic included in views and controllers
+* Use built-in ActiveRecord methods to join multiple tables of data, make calculations, and group data based on one or more attributes
+* Write model tests that fully cover the data logic of the application
+* Write feature tests that fully cover the functionality of the application
 
+##### Bulk Discounts are subject to the following criteria:
+
+* Bulk discounts should have a percentage discount as well as a quantity threshold
+* Bulk discounts should belong to a Merchant
+* A Bulk discount is eligible for all items that the merchant sells. Bulk discounts for one merchant should not affect items sold by another merchant
+* Merchants can have multiple bulk discounts
+* If an item meets the quantity threshold for multiple bulk discounts, only the one with the greatest percentage discount should be applied
+* Bulk discounts should apply on a per-item basis
+* If the quantity of an item ordered meets or exceeds the quantity threshold, then the percentage discount should apply to that item only  
+* Other items that did not meet the quantity threshold will not be affected
+* The quantities of items ordered cannot be added together to meet the quantity thresholds, e.g. a customer cannot order 1 of Item A and 1 of * Item B to meet a quantity threshold of 2. They must order 2 or Item A and/or 2 of Item B
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple example steps
 
 ### Prerequisites
 
@@ -90,7 +109,7 @@ To get a local copy up and running follow these simple example steps.
 
 ![Little Esty Shop](https://user-images.githubusercontent.com/74436194/120427830-e18e2300-c32f-11eb-907c-723750913e80.png)
 
-See the [open issues](https://github.com/lcpulzone/bulk-discounts/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/lcpulzone/bulk-discounts/issues) for a list of proposed features (and known issues)
 
 
 ## Contributing
@@ -109,7 +128,8 @@ Contributions are what make the open source community such an amazingly rad plac
 Leigh Cepriano Pulzone - [Linkedin](https://www.linkedin.com/in/lcpulzone/) - [GitHub](https://github.com/lcpulzone) - [Email](lcpulzone@gmail.com)
 
 Project Link: [Bulk Discounts](https://github.com/lcpulzone/bulk-discounts)<br />
-Group Project Link: [Little Esty Shop](https://github.com/jrwhitmer/little-esty-shop)
+Group Project Link: [Little Esty Shop](https://github.com/jrwhitmer/little-esty-shop)<br />
+Group Project Contacts: [Little Esty Shop](https://github.com/jrwhitmer/little-esty-shop/graphs/contributors)
 
 
 ## Acknowledgements
